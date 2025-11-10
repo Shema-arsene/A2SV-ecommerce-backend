@@ -153,8 +153,8 @@ export const getOrderHistory = async (req: AuthRequest, res: Response) => {
 
 export const getOrderById = async (req: AuthRequest, res: Response) => {
   try {
-    const { orderId } = req.params
-    const order = await Order.findById(orderId)
+    const { id } = req.params
+    const order = await Order.findById(id)
       .populate("items.product", "name description price category")
       .populate("user", "username email")
 

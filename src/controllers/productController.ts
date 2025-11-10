@@ -89,8 +89,8 @@ export const getProducts = async (req: AuthRequest, res: Response) => {
 // Get a single product by ID
 export const getProductById = async (req: AuthRequest, res: Response) => {
   try {
-    const { prodId } = req.params
-    const product = await Product.findById(prodId).select(
+    const { id } = req.params
+    const product = await Product.findById(id).select(
       "name description price stock category"
     )
 
