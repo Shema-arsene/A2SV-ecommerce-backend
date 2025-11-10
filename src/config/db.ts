@@ -1,8 +1,8 @@
 import mongoose from "mongoose"
 
-const Mongo_URI = process.env.MONGODB_URI
 const connectDB = async (): Promise<void> => {
   try {
+    const Mongo_URI = process.env.MONGODB_URI
     if (!Mongo_URI) {
       throw new Error("Please add your Mongo URI to .env")
     }
