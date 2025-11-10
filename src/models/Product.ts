@@ -36,11 +36,6 @@ const productSchema = new Schema<IProduct>(
       type: String,
       required: true,
     },
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
   },
   {
     timestamps: true,
