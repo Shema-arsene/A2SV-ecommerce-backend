@@ -1,10 +1,6 @@
 import type { Request, Response } from "express"
-import jwt from "jsonwebtoken"
 import User from "../models/User.js"
-
-const generateToken = (userId: string) => {
-  return jwt.sign({ userId }, process.env.JWT_SECRET!, { expiresIn: "7d" })
-}
+import generateToken from "../utils/generateToken.js"
 
 export const register = async (req: Request, res: Response) => {
   try {
