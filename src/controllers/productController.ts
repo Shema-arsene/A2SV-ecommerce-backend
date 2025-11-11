@@ -4,6 +4,7 @@ import type { AuthRequest } from "../middleware/auth.js"
 
 // Create a new product
 export const createProduct = async (req: AuthRequest, res: Response) => {
+  const user = req.user!._id
   try {
     const { name, description, price, stock, category } = req.body
 
@@ -26,6 +27,7 @@ export const createProduct = async (req: AuthRequest, res: Response) => {
       price,
       stock,
       category: category.trim(),
+      user,
     })
 
     await product.save()
